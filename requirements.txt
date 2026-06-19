@@ -10,3 +10,5 @@ sentence-transformers>=3.0.0
 torch>=2.2.0
 reportlab>=4.1.0
 pydantic>=2.6.0
+jinja2
+python-multipart

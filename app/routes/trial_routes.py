@@ -18,7 +18,6 @@ def create_trial(payload: TrialCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(trial)
 
-    # Index in vector DB
     add_trial_to_vector_db({
         "id": trial.id,
         "title": trial.title,
@@ -31,7 +30,6 @@ def create_trial(payload: TrialCreate, db: Session = Depends(get_db)):
         "status": trial.status,
     })
     return trial
-
 
 @router.get("", response_model=List[TrialResponse])
 def list_trials(db: Session = Depends(get_db)):

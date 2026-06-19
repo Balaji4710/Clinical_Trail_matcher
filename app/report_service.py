@@ -1,8 +1,6 @@
-"""Generate PDF match reports with ReportLab."""
 import os
 from datetime import datetime
 from typing import Any, Dict
-
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet

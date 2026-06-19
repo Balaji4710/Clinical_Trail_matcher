@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Trial Matcher</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Clinical Trial & EHR Matcher</h1>
+    <div class="card">
+        <h2>Upload EHR PDF</h2>
+        <input type="file" id="ehrFile" accept=".pdf">
+        <button onclick="uploadEHR()">
+            Upload EHR
+        </button>
+    </div>
+    <div class="card">
+        <h2>Match Patient</h2>
+        <input type="text" id="patient_name" placeholder="Patient Name">
+        <input type="number" id="age" placeholder="Age">
+        <input type="text" id="gender" placeholder="Gender">
+        <input type="text" id="disease" placeholder="Disease">
+        <input type="text" id="medication" placeholder="Medication">
+        <textarea id="medical_history"
+            placeholder="Medical History"></textarea>
+        <input type="number"
+               id="top_k"
+               value="5"
+               min="1"
+               max="20">
+        <button onclick="matchPatient()">
+            Match Patient
+        </button>
+    </div>
+    <div class="card">
+        <h2>Create Clinical Trial</h2>
+        <input type="text" id="title"
+               placeholder="Trial Title">
+        <input type="text" id="trialDisease"
+               placeholder="Disease">
+        <textarea id="description"
+                  placeholder="Description"></textarea>
+        <textarea id="inclusion"
+                  placeholder="Inclusion Criteria"></textarea>
+        <textarea id="exclusion"
+                  placeholder="Exclusion Criteria"></textarea>
+        <input type="number"
+               id="minAge"
+               placeholder="Min Age">
+        <input type="number"
+               id="maxAge"
+               placeholder="Max Age">
+        <input type="text"
+               id="status"
+               value="recruiting">
+        <button onclick="createTrial()">
+            Create Trial
+        </button>
+    </div>
+    <div class="card">
+        <h2>Clinical Trials</h2>
+        <button onclick="getTrials()">
+            Load Trials
+        </button>
+    </div>
+    <div class="card">
+        <h2>Generate Report</h2>
+        <button onclick="generateReport()">
+            Generate PDF Report
+        </button>
+    </div>
+    <div class="card">
+        <h2>Results</h2>
+        <pre id="result"></pre>
+    </div>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>
